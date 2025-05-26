@@ -1,5 +1,5 @@
 // src/components/HammingTester.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { encode, decode } from '../utils/hamming';
 
 /* utility --------------------------------------------------- */
@@ -12,7 +12,7 @@ function randomBits(n: number): string {
 /* component ------------------------------------------------- */
 export default function HammingTester() {
   /* UI state */
-  const [msgLen, setMsgLen] = useState(7); // desired random length
+  const [msgLen] = useState(7); // desired random length
   const [raw, setRaw] = useState(randomBits(msgLen)); // original message
   const [codeword, setCodeword] = useState(''); // encoded bits
   const [received, setReceived] = useState(''); // BEC output
